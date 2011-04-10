@@ -8,7 +8,7 @@ LoudParrot.VoiceCommands = function(twitter) {
     var rest = tokens.splice(1).join(" ");
     
     switch(command) {
-      case 'tweet': twitter.tweet(rest); break;
+      case 'post': twitter.tweet(rest); break;
       default: console.log('Command not found');
     }
     return spokenString;

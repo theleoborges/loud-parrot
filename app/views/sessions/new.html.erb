@@ -1,5 +1,11 @@
 <% if signed_in? %>
   <div>
+    Click on the mic below and speak using this format to update your status (you'll be given a chance to fix it before it's actually posted): <br>
+    <pre>
+      <strong>post</strong> your new status <br>
+    </pre>
+  </div>
+  <div>
     <input id="talk" type="text" x-webkit-speech onwebkitspeechchange="voiceCommands.parse(this.value);" readonly/>
   </div>
   <div>
@@ -37,12 +43,12 @@
     </tr>
   </table>
   <p>
-    <%# "#{time_ago_in_words(@user.status.created_at).capitalize} ago, you said:" %>
+    <%= "#{time_ago_in_words(@user.status.created_at).capitalize} ago, you said:" %>
     <q>
-      <%# @user.status.text %>
+      <%= @user.status.text %>
     </q>
   </p>
-  <p>Timeline:</p>
+  <p>Your Timeline:</p>
   <% Twitter.home_timeline.each do |tweet| %>
     <%= tweet.user.name %>: <%= raw linkify(tweet.text) %><br>
   <% end  %>

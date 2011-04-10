@@ -1,6 +1,12 @@
 class TwitterController < ApplicationController
+  layout false
+
   def tweet
-    Twitter.update(params[:text])
-    render :text => "Status updated.", :layout => false
+    if (1..140).include?(params[:text].size)
+      Twitter.update(params[:text])
+      render :text => "Status updated."
+    else
+      render :text => "Couldn't update status. Too long perhaps?"
+    end
   end
 end
