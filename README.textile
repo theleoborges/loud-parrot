@@ -1,6 +1,8 @@
 h1. LoudParrot
 
-Prototype rails app showing how it's possible to use Google Chrome's speech recognition capability to update your status on Twitter.
+Prototype rails app showing how it's possible to use Google Chrome's speech recognition capability - available in the beta builds - to update your status on Twitter.
+
+Check out the demo at "http://loudparrot.heroku.com/":http://loudparrot.heroku.com/
 
 h2. Dependencies
 
