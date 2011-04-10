@@ -1,7 +1,9 @@
 <% if signed_in? %>
   <div>
-    <input id="talk" type="text" x-webkit-speech onwebkitspeechchange="LoudParrot.VoiceCommands.parse(this.value);"/>
-    <input id="tweet" type="text"/>
+    <input id="talk" type="text" x-webkit-speech onwebkitspeechchange="voiceCommands.parse(this.value);" readonly/>
+  </div>
+  <div>
+    <textarea name="tweet-text" x-webkit-speech id="tweet-text" cols="50" rows="3"></textarea><a href="#" id="tweet-link">Tweet</a>
   </div>
   <div id="result"></div>
   <%= image_tag(@user.profile_image_url).html_safe %>
@@ -35,11 +37,16 @@
     </tr>
   </table>
   <p>
-    <%= "#{time_ago_in_words(@user.status.created_at).capitalize} ago, you said:" %>
+    <%# "#{time_ago_in_words(@user.status.created_at).capitalize} ago, you said:" %>
     <q>
-      <%= @user.status.text %>
+      <%# @user.status.text %>
     </q>
   </p>
+  <p>Timeline:</p>
+  <% Twitter.home_timeline.each do |tweet| %>
+    <%= tweet.user.name %>: <%= raw linkify(tweet.text) %><br>
+  <% end  %>
+  
   <%= form_tag('/sessions/destroy', :method => :delete) do %>
     <%= submit_tag 'Sign out' %>
   <% end %>

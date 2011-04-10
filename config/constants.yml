@@ -1,9 +1,6 @@
 # Enter your per-environment constants below
 
 development: &default
-  twitter:
-    consumer_key:  "a7BiB66gojE4Ekeqp3zNbA"
-    consumer_secret:  "l2RdVNshUrCbTywJZaDrSZe6NPva6rKLs6aTL1ZOUI4"
 
 production:
   <<: *default

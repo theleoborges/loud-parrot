@@ -5,3 +5,11 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
 LoudParrot::Application.load_tasks
+
+
+desc "Jammit!"
+task :jammit do
+  require 'jammit'
+  Jammit.package!
+end
+

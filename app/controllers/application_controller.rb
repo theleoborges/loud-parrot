@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   private
 
   def oauth_consumer
-    @oauth_consumer ||= OAuth::Consumer.new(ENV['LOUD_PARROT_TW_CONSUMER_KEY'], ENV['LOUD_PARROT_TW_CONSUMER_SECRET'], :site => 'http://api.twitter.com', :request_endpoint => 'http://api.twitter.com', :sign_in => true)
+    @oauth_consumer ||= OAuth::Consumer.new(ENV['LOUD_PARROT_TW_CONSUMER_KEY'],
+                                            ENV['LOUD_PARROT_TW_CONSUMER_SECRET'],
+                                            :site => 'http://api.twitter.com',
+                                            :request_endpoint => 'http://api.twitter.com',
+                                            :sign_in => true)
   end
 
   def client

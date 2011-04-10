@@ -1,0 +1,7 @@
+embed_assets: on
+
+javascripts:
+  loud-parrot:
+    - public/javascripts/twitter.js
+    - public/javascripts/voiceCommands.js
+    - public/javascripts/application.js
