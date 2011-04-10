@@ -1,0 +1,11 @@
+h1. LoudParrot
+
+Prototype rails app showing how it's possible to use Google Chrome's speech recognition capability to update your status on Twitter.
+
+h2. Dependencies
+
+* You will need "Google Chrome's beta builds":http://www.google.com/intl/en/landing/chrome/beta/ in order to use the project
+
+h2. Copyright
+
+Copyright (c) 2011- "Leonardo Borges":http://www.leonardoborges.com , released under the MIT license
