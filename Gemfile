@@ -5,8 +5,11 @@ gem 'oauth', '~> 0.4.4'
 gem 'twitter', '~> 1.1.2'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'app_constants'
-gem 'yui-compressor', :git => "git://github.com/oleander/ruby-yui-compressor.git", :require  => "yui/compressor"
 gem 'jammit'
+
+group :development do
+  gem 'yui-compressor', :git => "git://github.com/oleander/ruby-yui-compressor.git", :require  => "yui/compressor"
+end
 
 group :test do
   gem 'rspec'
